@@ -5,3 +5,7 @@ body{ padding-top: 60px; }
 li.no-point { list-style-type: none; }
 h1,h2,h3,h4,h5{ font-family: 'Gafata', sans-serif; }
 body { font-family: 'Gafata', sans-serif;}
+.inline-block { display: inline-block; }
+.avatar-image { border:3px dashed black; }
+.social-links { font-size:25px; }
+.social-links a { text-decoration: none; }
