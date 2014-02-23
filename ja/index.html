@@ -9,6 +9,7 @@
 <meta content='width=device-width, initial-scale=1.0' name='viewport'>
 <link href="/stylesheets/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
 <link href="/stylesheets/custom.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/font-awesome/css/font-awesome.css" media="screen" rel="stylesheet" type="text/css" />
 <link href='http://fonts.googleapis.com/css?family=Gafata' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -22,7 +23,7 @@
 <span class='icon-bar'></span>
 </a>
 <!-- %img.pull-left{ "src" => "/img/logo/60x60.jpeg" } -->
-<a class='brand' href='/ja'>Yao Yuan</a>
+<!-- %a.brand{ "href" =>"#{data.general.locale_dict_top[I18n.locale]}"} 曲がらねば、世を渡らず -->
 <ul class='nav pull-right'>
 <li>
 <a href='/ja'>
@@ -59,8 +60,6 @@
 <!-- - @bodyclass = "newproject" -->
 <div class='row'>
 <div class='span9'>
-<h1>ブログ</h1>
-<hr>
 <h3>マグルが魔法使いに変わる方法</h3>
 <h4 id="section">チャレンジ</h4>
 
@@ -101,11 +100,21 @@
 <b>January 11 2014</b>
 <hr>
 </div>
-<div class='span3'>
-<div class='row text-center'>
-<img class='img-circle span2' src='/img/logo/420x420.jpeg'>
+<div class='span3 text-center'>
+<div class='row text-center inline-block'>
+<img class='img-rounded span2' src='/img/logo/420x420.jpeg'>
 </div>
-<div class='c-gray'>UIデザインとアプリ作り</div>
+<div class='social-links'>
+<a href='https://github.com/knarfytrebil/'>
+<i class='fa fa-github'></i>
+</a>
+<a href='http://weibo.com/206800090/'>
+<i class='fa fa-weibo'></i>
+</a>
+<a href='http://www.linkedin.com/pub/yao-yuan/52/759/18'>
+<i class='fa fa-linkedin-square'></i>
+</a>
+</div>
 </div>
 </div>
 
