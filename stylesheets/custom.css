@@ -9,3 +9,5 @@ body { font-family: 'Gafata', sans-serif;}
 .avatar-image { border:3px dashed black; }
 .social-links { font-size:25px; }
 .social-links a { text-decoration: none; }
+.fa-2 { font-size: 2em; }
+.slogan p { margin-top:10px; }

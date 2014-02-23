@@ -3,51 +3,63 @@
 <head>
 <meta charset='utf-8'>
 <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
-<title></title>
+<meta content='width=device-width, initial-scale=1' name='viewport'>
 <meta content='' name='description'>
 <meta content='' name='author'>
+<link href='../../assets/ico/favicon.ico' rel='shortcut icon'>
+<title></title>
 <meta content='width=device-width, initial-scale=1.0' name='viewport'>
 <link href="/stylesheets/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
 <link href="/stylesheets/custom.css" media="screen" rel="stylesheet" type="text/css" />
 <link href="/stylesheets/font-awesome/css/font-awesome.css" media="screen" rel="stylesheet" type="text/css" />
 <link href='http://fonts.googleapis.com/css?family=Gafata' rel='stylesheet' type='text/css'>
+<!--[if lt IE 9]>  <![endif]-->
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 </head>
 <body>
+<div class='navbar navbar-default navbar-fixed-top' role='navigation'>
 <div class='container'>
-<div class='navbar navbar-fixed-top'>
-<div class='navbar-inner'>
-<div class='container'>
-<a class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
+<div class='navbar-header'>
+<button class='navbar-toggle' data-target='.navbar-collapse' data-toggle='collapse' type='button'>
+<span class='sr-only'>Toggle navigation</span>
 <span class='icon-bar'></span>
 <span class='icon-bar'></span>
 <span class='icon-bar'></span>
-</a>
-<!-- %img.pull-left{ "src" => "/img/logo/60x60.jpeg" } -->
-<!-- %a.brand{ "href" =>"#{data.general.locale_dict_top[I18n.locale]}"} 曲がらねば、世を渡らず -->
-<ul class='nav pull-right'>
+</button>
+<a class='navbar-brand' href='#'></a>
+</div>
+<div class='collapse navbar-collapse'>
+<ul class='nav navbar-nav navbar-right'>
 <li>
 <a href='/ja'>
-<i class='icon-home icon-white'></i>
+<i class='fa fa-home fa-2'></i>
 </a>
 </li>
 <li>
 <a href='/ja/blogs.html'>
-<i class='icon-pencil icon-white'></i>
+<i class='fa fa-pencil-square fa-2'></i>
 </a>
 </li>
 <li class='dropdown' id='preview-menu'>
 <a class='dropdown-toggle' data-toggle='dropdown' href='#'>
-<i class='icon-globe icon-white'></i>
+<i class='fa fa-globe fa-2'></i>
 </a>
 <ul class='dropdown-menu'>
 <li>
-<a href='/ja/index.html'>> 日本語</a>
+<a href='/ja/index.html'>
+<i class='fa fa-square'>&nbsp; 日本語</i>
+</a>
 </li>
 <li>
-<a href='/cn/index.html'>> 简体中文</a>
+<a href='/cn/index.html'>
+<i class='fa fa-square'>&nbsp; 简体中文</i>
+</a>
 </li>
 <li>
-<a href='/index.html'>> English</a>
+<a href='/index.html'>
+<i class='fa fa-square'>&nbsp; English</i>
+</a>
 </li>
 </ul>
 </li>
@@ -55,11 +67,12 @@
 </div>
 </div>
 </div>
+<div class='container'>
 <h1></h1>
 <!-- - @title = "Yao" -->
 <!-- - @bodyclass = "newproject" -->
 <div class='row'>
-<div class='span9'>
+<div class='col-xs-9'>
 <h3>マグルが魔法使いに変わる方法</h3>
 <h4 id="section">チャレンジ</h4>
 
@@ -100,27 +113,33 @@
 <b>January 11 2014</b>
 <hr>
 </div>
-<div class='span3 text-center'>
+<div class='col-xs-3 text-center'>
 <div class='row text-center inline-block'>
-<img class='img-rounded span2' src='/img/logo/420x420.jpeg'>
+<img class='img-circle col-xs-10 col-xs-offset-1' src='/img/logo/420x420.jpeg'>
+</div>
+<div class='slogan'>
+Ninja @ Manaflame
+<p class='c-gray'>生死去来，棚头傀儡。</p>
+<p class='c-gray'>一线断时，落落磊磊。</p>
 </div>
 <div class='social-links'>
 <a href='https://github.com/knarfytrebil/'>
-<i class='fa fa-github'></i>
+<i class='fa fa-github fa-2'></i>
 </a>
 <a href='http://weibo.com/206800090/'>
-<i class='fa fa-weibo'></i>
+<i class='fa fa-weibo fa-2'></i>
 </a>
 <a href='http://www.linkedin.com/pub/yao-yuan/52/759/18'>
-<i class='fa fa-linkedin-square'></i>
+<i class='fa fa-linkedin-square fa-2'></i>
 </a>
 </div>
 </div>
 </div>
 
-<footer>
+</div>
+<div class='container'>
+<hr>
 <p>&copy; 2011-2014 knarfytrebil.github.io</p>
-</footer>
 </div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
 <script>
