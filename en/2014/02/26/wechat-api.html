@@ -46,17 +46,17 @@
 </a>
 <ul class='dropdown-menu'>
 <li>
-<a href='/ja/index.html'>
+<a href='/ja/2014-02-26-wechat-api.html'>
 <i class='fa fa-square'>&nbsp; 日本語</i>
 </a>
 </li>
 <li>
-<a href='/cn/index.html'>
+<a href='/cn/2014-02-26-wechat-api.html'>
 <i class='fa fa-square'>&nbsp; 简体中文</i>
 </a>
 </li>
 <li>
-<a href='/index.html'>
+<a href='/2014-02-26-wechat-api.html'>
 <i class='fa fa-square'>&nbsp; English</i>
 </a>
 </li>
@@ -68,12 +68,9 @@
 </div>
 <div class='container'>
 <h1></h1>
-<!-- - @title = "Yao" -->
-<!-- - @bodyclass = "newproject" -->
-<div class='row'>
-<div class='col-md-9'>
-<h3>WeChat API</h3>
-<h4 id="the-wechat-api">The WeChat API</h4>
+<h1>WeChat API</h1>
+<hr>
+<article><h4 id="the-wechat-api">The WeChat API</h4>
 
 <p>Last night I made a little bit of an effort to tinker with the WeChat API, for it seems there are many interesting things one can do with it. And since it is one of the biggest way of marketing oneself on earth. It turned out to be quite necessary that I know how to program with the WeChat API. </p>
 
@@ -117,32 +114,9 @@
 <pre><code># coding: UTF-8&#x000A;import os&#x000A; &#x000A;import sae&#x000A;import web&#x000A;&#x000A;web.config.debug = True&#x000A; &#x000A;from wxAPI import WeixinInterface&#x000A; &#x000A;urls = (&#x000A;	'/', 'Hello',&#x000A;	'/weixin','WeixinInterface'&#x000A;)&#x000A; &#x000A;app_root = os.path.dirname(__file__)&#x000A;templates_root = os.path.join(app_root, 'templates')&#x000A;render = web.template.render(templates_root)&#x000A; &#x000A;class Hello:&#x000A;	def GET(self):&#x000A;		return render.hello("你好")&#x000A; &#x000A;app = web.application(urls, globals()).wsgifunc()&#x000A; &#x000A;application = sae.create_wsgi_app(app)&#x000A;</code></pre>
 
 <p>Let’s see what we can do here.</p>
-
-<b>February 26 2014</b>
+</article>
 <hr>
-</div>
-<div class='col-md-3 text-center'>
-<div class='row text-center inline-block'>
-<img class='img-circle col-xs-8 col-xs-offset-2' src='/img/logo/420x420.jpeg'>
-</div>
-<div class='slogan'>
-Ninja @ Manaflame
-<p class='c-gray'>生死去来，棚头傀儡。</p>
-<p class='c-gray'>一线断时，落落磊磊。</p>
-</div>
-<div class='social-links'>
-<a href='https://github.com/knarfytrebil/'>
-<i class='fa fa-github fa-2'></i>
-</a>
-<a href='http://weibo.com/206800090/'>
-<i class='fa fa-weibo fa-2'></i>
-</a>
-<a href='http://www.linkedin.com/pub/yao-yuan/52/759/18'>
-<i class='fa fa-linkedin-square fa-2'></i>
-</a>
-</div>
-</div>
-</div>
+<h4>Feb 26 , 2014</h4>
 
 </div>
 <div class='container'>
@@ -162,3 +136,4 @@ Ninja @ Manaflame
 <link href="/stylesheets/solarized_light.css" media="screen" rel="stylesheet" type="text/css" />
 <script>hljs.initHighlightingOnLoad();</script>
 </body>
+

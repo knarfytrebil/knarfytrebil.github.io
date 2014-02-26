@@ -75,10 +75,94 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2014-02-24T02:25:00Z</updated>
+  <updated>2014-02-26T02:01:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>WeChat API</title>
+    <link rel="alternate" href="/en/2014/02/26/wechat-api.html"/>
+    <id>/en/2014/02/26/wechat-api.html</id>
+    <published>2014-02-26T02:01:00Z</published>
+    <updated>2014-02-26T02:01:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <summary type="html">&lt;h4 id="the-wechat-api"&gt;The WeChat API&lt;/h4&gt;
+
+&lt;p&gt;Last night I made a little bit of an effort to tinker with the WeChat API, for it seems there are many interesting things one can do with it. And since it is one of the biggest way of marketing oneself on earth. It turned out to be...&lt;/p&gt;</summary>
+    <content type="html">&lt;h4 id="the-wechat-api"&gt;The WeChat API&lt;/h4&gt;
+
+&lt;p&gt;Last night I made a little bit of an effort to tinker with the WeChat API, for it seems there are many interesting things one can do with it. And since it is one of the biggest way of marketing oneself on earth. It turned out to be quite necessary that I know how to program with the WeChat API. &lt;/p&gt;
+
+&lt;h4 id="two-kinds-of-accounts"&gt;Two kinds of Accounts&lt;/h4&gt;
+
+&lt;p&gt;There are two kinds of &lt;strong&gt;WeChat Public Accounts&lt;/strong&gt; (At least that’s how they call them), the Service Account and the Subscription Account. Service Accounts are for corporations, and other commercial entities, in-app menus and other features comes directly in the package with &lt;strong&gt;Service Accounts&lt;/strong&gt;, and also, Service Account users can only broadcast messages once a month. Subscription Accounts, on the other hand, do not come with all the fancy features, including the in-app menus, perchases, and so on. However, if a user pays &lt;strong&gt;300 RMB&lt;/strong&gt; per year, the Subscription Account can also enjoy what the Service Accounts do. It all depends on to what extent a user want to do with this publicity after all.&lt;/p&gt;
+
+&lt;h4 id="functions"&gt;Functions&lt;/h4&gt;
+
+&lt;p&gt;All users will gain the WeChat API after they specify their addresses, what they do and upload a legit logo. Basic API functionalities are as follows:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Broadcasting Messages&lt;/li&gt;
+  &lt;li&gt;Receiving Messages&lt;/li&gt;
+  &lt;li&gt;Auto Reply&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;It seems to be quite simple, but in fact, there are a few types of messages:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Text Messages&lt;/li&gt;
+  &lt;li&gt;GeoLocation Messages&lt;/li&gt;
+  &lt;li&gt;Video Messages&lt;/li&gt;
+  &lt;li&gt;Voice Messages&lt;/li&gt;
+  &lt;li&gt;Graphic Messages&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Now it is quite clear isn’t it ? WeChat Account managers can utilize all kinds of informations on this platform, including user data, geographic informations to precisely market their products, interact with users programmatically.&lt;/p&gt;
+
+&lt;h4 id="techonology"&gt;Techonology&lt;/h4&gt;
+
+&lt;p&gt;I tried to use some existing libraries:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="http://sae.sina.com.cn/?m=apps&amp;amp;amp;a=detail&amp;amp;amp;aid=162"&gt;PHP Library&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://kingson.org/?p=259"&gt;Python&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;But finally, I tried to do it on my own:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# coding: UTF-8
+import os
+ 
+import sae
+import web
+
+web.config.debug = True
+ 
+from wxAPI import WeixinInterface
+ 
+urls = (
+	'/', 'Hello',
+	'/weixin','WeixinInterface'
+)
+ 
+app_root = os.path.dirname(__file__)
+templates_root = os.path.join(app_root, 'templates')
+render = web.template.render(templates_root)
+ 
+class Hello:
+	def GET(self):
+		return render.hello("你好")
+ 
+app = web.application(urls, globals()).wsgifunc()
+ 
+application = sae.create_wsgi_app(app)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Let’s see what we can do here.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>tag vs category</title>
     <link rel="alternate" href="/cn/2014/02/24/tag-vs-category.html"/>
@@ -402,110 +486,6 @@ elif env == "production":
 &lt;h4 id="section-4"&gt;最後の一言&lt;/h4&gt;
 
 &lt;p&gt;今日はギット・ハブでブログの作り方を生徒に教えまして、生徒が毎日ブログを更新する事に望んだが、凄く驚かされたようです。彼女はいまのツール環境になれるのはもう少し時間がかかる事だ。なので、今は落ち着いてやるべきだと思う。これからの何週間一歩一歩進むべきだと期待している。&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>当前PaaS供应商的比较</title>
-    <link rel="alternate" href="/cn/2014/01/11/how-to-convert-a-muggle.html"/>
-    <id>/cn/2014/01/11/how-to-convert-a-muggle.html</id>
-    <published>2014-01-11T09:30:00Z</published>
-    <updated>2014-01-11T09:30:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <summary type="html">&lt;h5 id="section"&gt;目录&lt;/h5&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;主要玩家
-    &lt;ul&gt;
-      &lt;li&gt;Heroku - 2007.4&lt;/li&gt;
-      &lt;li&gt;GAE (Google App Engine) - 2008.4&lt;/li&gt;
-      &lt;li&gt;新浪云计算 - 2009.11&lt;/li&gt;
-      &lt;li&gt;阿里云计算 ( Aliyun Cloud Engine ) - 2010.4&lt;/li&gt;
-      &lt;li&gt;腾讯云计算 - 2010.4&lt;/li&gt;
-      &lt;li&gt;百度云计算 - 2012.3&lt;/li&gt;
-      &lt;li&gt;Parse.com - 2012.6&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;比较标准
-    &lt;ul&gt;
-      &lt;li&gt;用户体验	
-   ...&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    <content type="html">&lt;h5 id="section"&gt;目录&lt;/h5&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;主要玩家
-    &lt;ul&gt;
-      &lt;li&gt;Heroku - 2007.4&lt;/li&gt;
-      &lt;li&gt;GAE (Google App Engine) - 2008.4&lt;/li&gt;
-      &lt;li&gt;新浪云计算 - 2009.11&lt;/li&gt;
-      &lt;li&gt;阿里云计算 ( Aliyun Cloud Engine ) - 2010.4&lt;/li&gt;
-      &lt;li&gt;腾讯云计算 - 2010.4&lt;/li&gt;
-      &lt;li&gt;百度云计算 - 2012.3&lt;/li&gt;
-      &lt;li&gt;Parse.com - 2012.6&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;比较标准
-    &lt;ul&gt;
-      &lt;li&gt;用户体验	
-        &lt;ul&gt;
-          &lt;li&gt;收费方式&lt;/li&gt;
-          &lt;li&gt;用户界面&lt;/li&gt;
-          &lt;li&gt;用户文档&lt;/li&gt;
-          &lt;li&gt;免费额度&lt;/li&gt;
-          &lt;li&gt;部署方式&lt;/li&gt;
-          &lt;li&gt;开发环境&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;性能
-        &lt;ul&gt;
-          &lt;li&gt;负载承受能力&lt;/li&gt;
-          &lt;li&gt;延迟&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;可选语言	&lt;/li&gt;
-      &lt;li&gt;可选数据库&lt;/li&gt;
-      &lt;li&gt;可移植性&lt;/li&gt;
-      &lt;li&gt;运营
-        &lt;ul&gt;
-          &lt;li&gt;社区支持&lt;/li&gt;
-          &lt;li&gt;线下活动&lt;/li&gt;
-          &lt;li&gt;线上活动&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;PaaS变革的驱动力
-    &lt;ul&gt;
-      &lt;li&gt;新的竞争者
-        &lt;ul&gt;
-          &lt;li&gt;Parse.com&lt;/li&gt;
-          &lt;li&gt;etc…&lt;/li&gt;
-          &lt;li&gt;VPS	&lt;/li&gt;
-          &lt;li&gt;SaaS&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Workflow Scripts
-        &lt;ul&gt;
-          &lt;li&gt;Rails&lt;/li&gt;
-          &lt;li&gt;Yeoman&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Node&lt;/li&gt;
-      &lt;li&gt;平台选择中的价值观陷阱&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;未来展望
-    &lt;ul&gt;
-      &lt;li&gt;单一语言的PaaS&lt;/li&gt;
-      &lt;li&gt;纯API化, Stateless, etc&lt;/li&gt;
-      &lt;li&gt;地缘性PaaS&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
 </content>
   </entry>
 </feed>
