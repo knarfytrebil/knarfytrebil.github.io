@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang='#{I18n.locale}'></html>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<meta content='' name='description'>
+<meta content='' name='author'>
+<title></title>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<link href="/stylesheets/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/custom.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/font-awesome/css/font-awesome.css" media="screen" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Gafata' rel='stylesheet' type='text/css'>
+<!--[if lt IE 9]>  <![endif]-->
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+</head>
+<body>
+<div class='navbar navbar-default navbar-fixed-top' role='navigation'>
+<div class='container'>
+<div class='navbar-header'>
+<button class='navbar-toggle' data-target='.navbar-collapse' data-toggle='collapse' type='button'>
+<span class='sr-only'>Toggle navigation</span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+</button>
+<a class='navbar-brand' href='#'></a>
+</div>
+<div class='collapse navbar-collapse'>
+<ul class='nav navbar-nav navbar-right'>
+<li>
+<a href='/'>
+<i class='fa fa-home fa-2'></i>
+</a>
+</li>
+<li>
+<a href='/blogs.html'>
+<i class='fa fa-pencil-square fa-2'></i>
+</a>
+</li>
+<li class='dropdown' id='preview-menu'>
+<a class='dropdown-toggle' data-toggle='dropdown' href='#'>
+<i class='fa fa-globe fa-2'></i>
+</a>
+<ul class='dropdown-menu'>
+<li>
+<a href='/ja/2014-02-26-wechat-api.html'>
+<i class='fa fa-square'>&nbsp; 日本語</i>
+</a>
+</li>
+<li>
+<a href='/cn/2014-02-26-wechat-api.html'>
+<i class='fa fa-square'>&nbsp; 简体中文</i>
+</a>
+</li>
+<li>
+<a href='/2014-02-26-wechat-api.html'>
+<i class='fa fa-square'>&nbsp; English</i>
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class='container'>
+<h1></h1>
+<h1>WeChat API</h1>
+<hr>
+<article><h4 id="the-wechat-api">The WeChat API</h4>
+
+<p>Last night I made a little bit of an effort to tinker with the WeChat API, for it seems there are many interesting things one can do with it. And since it is one of the biggest way of marketing oneself on earth. It turned out to be quite necessary that I know how to program with the WeChat API. </p>
+
+<h4 id="two-kinds-of-accounts">Two kinds of Accounts</h4>
+
+<p>There are two kinds of <strong>WeChat Public Accounts</strong> (At least that’s how they call them), the Service Account and the Subscription Account. Service Accounts are for corporations, and other commercial entities, in-app menus and other features comes directly in the package with <strong>Service Accounts</strong>, and also, Service Account users can only broadcast messages once a month. Subscription Accounts, on the other hand, do not come with all the fancy features, including the in-app menus, perchases, and so on. However, if a user pays <strong>300 RMB</strong> per year, the Subscription Account can also enjoy what the Service Accounts do. It all depends on to what extent a user want to do with this publicity after all.</p>
+
+<h4 id="functions">Functions</h4>
+
+<p>All users will gain the WeChat API after they specify their addresses, what they do and upload a legit logo. Basic API functionalities are as follows:</p>
+
+<ul>
+  <li>Broadcasting Messages</li>
+  <li>Receiving Messages</li>
+  <li>Auto Reply</li>
+</ul>
+
+<p>It seems to be quite simple, but in fact, there are a few types of messages:</p>
+
+<ul>
+  <li>Text Messages</li>
+  <li>GeoLocation Messages</li>
+  <li>Video Messages</li>
+  <li>Voice Messages</li>
+  <li>Graphic Messages</li>
+</ul>
+
+<p>Now it is quite clear isn’t it ? WeChat Account managers can utilize all kinds of informations on this platform, including user data, geographic informations to precisely market their products, interact with users programmatically.</p>
+
+<h4 id="techonology">Techonology</h4>
+
+<p>I tried to use some existing libraries:</p>
+
+<ul>
+  <li><a href="http://sae.sina.com.cn/?m=apps&amp;amp;a=detail&amp;amp;aid=162">PHP Library</a></li>
+  <li><a href="http://kingson.org/?p=259">Python</a></li>
+</ul>
+
+<p>But finally, I tried to do it on my own:</p>
+
+<pre><code># coding: UTF-8&#x000A;import os&#x000A; &#x000A;import sae&#x000A;import web&#x000A;&#x000A;web.config.debug = True&#x000A; &#x000A;from wxAPI import WeixinInterface&#x000A; &#x000A;urls = (&#x000A;	'/', 'Hello',&#x000A;	'/weixin','WeixinInterface'&#x000A;)&#x000A; &#x000A;app_root = os.path.dirname(__file__)&#x000A;templates_root = os.path.join(app_root, 'templates')&#x000A;render = web.template.render(templates_root)&#x000A; &#x000A;class Hello:&#x000A;	def GET(self):&#x000A;		return render.hello("你好")&#x000A; &#x000A;app = web.application(urls, globals()).wsgifunc()&#x000A; &#x000A;application = sae.create_wsgi_app(app)&#x000A;</code></pre>
+
+<p>Let’s see what we can do here.</p>
+</article>
+<hr>
+<h4>Feb 26 , 2014</h4>
+
+</div>
+<div class='container'>
+<hr>
+<p>&copy; 2011-2014 knarfytrebil.github.io</p>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    window.jQuery || document.write('<script src="/javascripts/libs/jquery-1.8.3.min.js"><\/script>')
+  //]]>
+</script>
+<script src="/javascripts/plugins.js" type="text/javascript"></script>
+<script src="/javascripts/script.js" type="text/javascript"></script>
+<script src="/javascripts/bootstrap.js" type="text/javascript"></script>
+<script src="/javascripts/highlight.pack.js" type="text/javascript"></script>
+<link href="/stylesheets/solarized_light.css" media="screen" rel="stylesheet" type="text/css" />
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+

@@ -3,51 +3,62 @@
 <head>
 <meta charset='utf-8'>
 <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
-<title></title>
+<meta content='width=device-width, initial-scale=1' name='viewport'>
 <meta content='' name='description'>
 <meta content='' name='author'>
+<title></title>
 <meta content='width=device-width, initial-scale=1.0' name='viewport'>
 <link href="/stylesheets/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
 <link href="/stylesheets/custom.css" media="screen" rel="stylesheet" type="text/css" />
 <link href="/stylesheets/font-awesome/css/font-awesome.css" media="screen" rel="stylesheet" type="text/css" />
 <link href='http://fonts.googleapis.com/css?family=Gafata' rel='stylesheet' type='text/css'>
+<!--[if lt IE 9]>  <![endif]-->
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 </head>
 <body>
+<div class='navbar navbar-default navbar-fixed-top' role='navigation'>
 <div class='container'>
-<div class='navbar navbar-fixed-top'>
-<div class='navbar-inner'>
-<div class='container'>
-<a class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
+<div class='navbar-header'>
+<button class='navbar-toggle' data-target='.navbar-collapse' data-toggle='collapse' type='button'>
+<span class='sr-only'>Toggle navigation</span>
 <span class='icon-bar'></span>
 <span class='icon-bar'></span>
 <span class='icon-bar'></span>
-</a>
-<!-- %img.pull-left{ "src" => "/img/logo/60x60.jpeg" } -->
-<!-- %a.brand{ "href" =>"#{data.general.locale_dict_top[I18n.locale]}"} 曲がらねば、世を渡らず -->
-<ul class='nav pull-right'>
+</button>
+<a class='navbar-brand' href='#'></a>
+</div>
+<div class='collapse navbar-collapse'>
+<ul class='nav navbar-nav navbar-right'>
 <li>
 <a href='/cn'>
-<i class='icon-home icon-white'></i>
+<i class='fa fa-home fa-2'></i>
 </a>
 </li>
 <li>
 <a href='/cn/blogs.html'>
-<i class='icon-pencil icon-white'></i>
+<i class='fa fa-pencil-square fa-2'></i>
 </a>
 </li>
 <li class='dropdown' id='preview-menu'>
 <a class='dropdown-toggle' data-toggle='dropdown' href='#'>
-<i class='icon-globe icon-white'></i>
+<i class='fa fa-globe fa-2'></i>
 </a>
 <ul class='dropdown-menu'>
 <li>
-<a href='/ja/2014-01-13-major-paas-comparison.html'>> 日本語</a>
+<a href='/ja/2014-01-13-major-paas-comparison.html'>
+<i class='fa fa-square'>&nbsp; 日本語</i>
+</a>
 </li>
 <li>
-<a href='/cn/2014-01-13-major-paas-comparison.html'>> 简体中文</a>
+<a href='/cn/2014-01-13-major-paas-comparison.html'>
+<i class='fa fa-square'>&nbsp; 简体中文</i>
+</a>
 </li>
 <li>
-<a href='/2014-01-13-major-paas-comparison.html'>> English</a>
+<a href='/2014-01-13-major-paas-comparison.html'>
+<i class='fa fa-square'>&nbsp; English</i>
+</a>
 </li>
 </ul>
 </li>
@@ -55,6 +66,7 @@
 </div>
 </div>
 </div>
+<div class='container'>
 <h1></h1>
 <h1>当前PaaS供应商的比较 ( 正文 )</h1>
 <hr>
@@ -191,9 +203,10 @@
 <hr>
 <h4>Jan 13 , 2014</h4>
 
-<footer>
+</div>
+<div class='container'>
+<hr>
 <p>&copy; 2011-2014 knarfytrebil.github.io</p>
-</footer>
 </div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
 <script>
@@ -207,10 +220,5 @@
 <script src="/javascripts/highlight.pack.js" type="text/javascript"></script>
 <link href="/stylesheets/solarized_light.css" media="screen" rel="stylesheet" type="text/css" />
 <script>hljs.initHighlightingOnLoad();</script>
-<!-- :javascript -->
-<!-- var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']]; -->
-<!-- (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0]; -->
-<!-- g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js'; -->
-<!-- s.parentNode.insertBefore(g,s)}(document,'script')); -->
 </body>
 
