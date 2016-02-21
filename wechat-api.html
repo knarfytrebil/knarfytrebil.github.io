@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>WeChat API - Relaed's Tech Blog</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="./wechat-api.html">
+
+        <meta name="author" content="Relaed" />
+        <meta name="description" content="The WeChat API Last night I made a little bit of an effort to tinker with the WeChat API, for it seems there are many interesting things one can do with it. And since it is one of the biggest way of marketing oneself on earth. It turned out to ..." />
+
+        <meta property="og:site_name" content="Relaed's Tech Blog" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="WeChat API"/>
+        <meta property="og:url" content="./wechat-api.html"/>
+        <meta property="og:description" content="The WeChat API Last night I made a little bit of an effort to tinker with the WeChat API, for it seems there are many interesting things one can do with it. And since it is one of the biggest way of marketing oneself on earth. It turned out to ..."/>
+        <meta property="article:published_time" content="2014-02-26" />
+            <meta property="article:section" content="Blog" />
+            <meta property="article:author" content="Relaed" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="./theme/css/bootstrap.sandstone.min.css" type="text/css"/>
+    <link href="./theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="./theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="./theme/css/style.css" type="text/css"/>
+
+
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="./" class="navbar-brand">
+Relaed's Tech Blog            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="./category/blog.html">Blog</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="./archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="./wechat-api.html"
+                       rel="bookmark"
+                       title="Permalink to WeChat API">
+                        WeChat API
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body clear-both">
+<footer class="post-info">
+    <!-- <span class="label label-default">Date</span> -->
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-02-26T02:01:00+00:00"> Wed 26 February 2014</time>
+    </span>
+
+
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <h4>The WeChat API</h4>
+<p>Last night I made a little bit of an effort to tinker with the WeChat API, for it seems there are many interesting things one can do with it. And since it is one of the biggest way of marketing oneself on earth. It turned out to be quite necessary that I know how to program with the WeChat API. </p>
+<h4>Two kinds of Accounts</h4>
+<p>There are two kinds of <strong>WeChat Public Accounts</strong> (At least that's how they call them), the Service Account and the Subscription Account. Service Accounts are for corporations, and other commercial entities, in-app menus and other features comes directly in the package with <strong>Service Accounts</strong>, and also, Service Account users can only broadcast messages once a month. Subscription Accounts, on the other hand, do not come with all the fancy features, including the in-app menus, perchases, and so on. However, if a user pays <strong>300 RMB</strong> per year, the Subscription Account can also enjoy what the Service Accounts do. It all depends on to what extent a user want to do with this publicity after all.</p>
+<h4>Functions</h4>
+<p>All users will gain the WeChat API after they specify their addresses, what they do and upload a legit logo. Basic API functionalities are as follows:</p>
+<ul>
+<li>Broadcasting Messages</li>
+<li>Receiving Messages</li>
+<li>Auto Reply</li>
+</ul>
+<p>It seems to be quite simple, but in fact, there are a few types of messages:</p>
+<ul>
+<li>Text Messages</li>
+<li>GeoLocation Messages</li>
+<li>Video Messages</li>
+<li>Voice Messages</li>
+<li>Graphic Messages</li>
+</ul>
+<p>Now it is quite clear isn't it ? WeChat Account managers can utilize all kinds of informations on this platform, including user data, geographic informations to precisely market their products, interact with users programmatically.</p>
+<h4>Techonology</h4>
+<p>I tried to use some existing libraries:</p>
+<ul>
+<li><a href="http://sae.sina.com.cn/?m=apps&amp;a=detail&amp;aid=162">PHP Library</a></li>
+<li><a href="http://kingson.org/?p=259">Python</a></li>
+</ul>
+<p>But finally, I tried to do it on my own:</p>
+<div class="highlight"><pre><span></span><span class="c1"># coding: UTF-8</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">import</span> <span class="nn">sae</span>
+<span class="kn">import</span> <span class="nn">web</span>
+
+<span class="n">web</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">debug</span> <span class="o">=</span> <span class="bp">True</span>
+
+<span class="kn">from</span> <span class="nn">wxAPI</span> <span class="kn">import</span> <span class="n">WeixinInterface</span>
+
+<span class="n">urls</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="s1">&#39;Hello&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;/weixin&#39;</span><span class="p">,</span><span class="s1">&#39;WeixinInterface&#39;</span>
+<span class="p">)</span>
+
+<span class="n">app_root</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">__file__</span><span class="p">)</span>
+<span class="n">templates_root</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">app_root</span><span class="p">,</span> <span class="s1">&#39;templates&#39;</span><span class="p">)</span>
+<span class="n">render</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">templates_root</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Hello</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">GET</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">render</span><span class="o">.</span><span class="n">hello</span><span class="p">(</span><span class="s2">&quot;你好&quot;</span><span class="p">)</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">application</span><span class="p">(</span><span class="n">urls</span><span class="p">,</span> <span class="nb">globals</span><span class="p">())</span><span class="o">.</span><span class="n">wsgifunc</span><span class="p">()</span>
+
+<span class="n">application</span> <span class="o">=</span> <span class="n">sae</span><span class="o">.</span><span class="n">create_wsgi_app</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Let's see what we can do here.</p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+            <h4>
+                <i class="fa fa-home fa-lg"></i>
+                <span class="icon-label">Social</span>
+            </h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="#"><i class="fa fa-facebook-square fa-lg"></i> Facebook</a></li>
+                <li class="list-group-item"><a href="#"><i class="fa fa-github-square fa-lg"></i> Github</a></li>
+              </ul>
+            </li>
+
+
+
+
+
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2014 Relaed
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#"></a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="./theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="./theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="./theme/js/respond.min.js"></script>
+
+
+</body>
+</html>
